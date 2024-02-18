@@ -10,8 +10,9 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import clsx from 'clsx'
-import { Tabs } from '../ui/tabs'
+import { Tabs, TabsContent } from '../ui/tabs'
 import { Database, Plus, SettingsIcon, SquareStackIcon } from 'lucide-react'
+import EditorTabs from './EditorTabs'
 
 type Props = {}
 
@@ -30,20 +31,29 @@ const EditorSidebar = (props: Props) => {
       open={true}
       modal={false}
     >
-      <SheetTrigger>Open</SheetTrigger>
+      <Tabs defaultValue="components">
       <SheetContent
         showX={false}
         side="right"
         className={clsx(
           'mt-[97px] w-16 z-[80] shadow-none  p-0 transition-all overflow-hidden',
         )}>
-        <div className='flex flex-col items-center gap-6'>
-
-          <Plus />
-          <SettingsIcon />
-        </div>
-
+        <EditorTabs/>
       </SheetContent>
+      <SheetContent
+        showX={false}
+        side="right"
+        className={clsx(
+          'mt-[97px] w-80 z-[40] shadow-none p-0 mr-16 bg-background h-full transition-all overflow-hidden',
+        )}>
+          <TabsContent value="components">
+            <p>Components Tab</p>
+          </TabsContent>
+          <TabsContent value="settings">
+            <p>Settings Tab</p>
+          </TabsContent>
+      </SheetContent>
+      </Tabs>
     </Sheet>
   )
 }

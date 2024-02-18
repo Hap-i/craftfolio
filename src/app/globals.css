@@ -59,3 +59,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+.icon-click {
+  @apply hover:text-primary cursor-pointer
+}

@@ -9,9 +9,11 @@ const layout = ({
 }>) => {
   return (
     <div className=''>
-      <EditorNavbar/>
+      <EditorNavbar />
+      <div className='flex'>
+        {children}
       <EditorSidebar />
-      {children}
+      </div>
     </div>
   )
 }

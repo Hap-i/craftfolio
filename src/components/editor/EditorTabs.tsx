@@ -12,11 +12,11 @@ type Props = {}
 const EditorTabs = (props: Props) => {
   return (
       <TabsList className="flex items-center flex-col justify-evenly w-full bg-transparent h-fit gap-4" >
-        <TabsTrigger value="components">
-          <Plus className='icon-click' />
+        <TabsTrigger value="components" className="data-[state=active]:bg-primary" >
+          <Plus className='' />
         </TabsTrigger>
-        <TabsTrigger value="settings">
-          <SettingsIcon className='icon-click' />
+        <TabsTrigger value="settings" className="data-[state=active]:bg-primary">
+          <SettingsIcon className='' />
         </TabsTrigger>
       </TabsList>
   )

@@ -36,7 +36,7 @@ const EditorSidebar = (props: Props) => {
         showX={false}
         side="right"
         className={clsx(
-          'mt-[97px] w-16 z-[80] shadow-none  p-0 transition-all overflow-hidden',
+          'mt-[80px] w-16 z-[80] shadow-none  p-0 transition-all overflow-hidden',
         )}>
         <EditorTabs/>
       </SheetContent>
@@ -44,7 +44,7 @@ const EditorSidebar = (props: Props) => {
         showX={false}
         side="right"
         className={clsx(
-          'mt-[97px] w-80 z-[40] shadow-none p-0 mr-16 bg-background h-full transition-all overflow-hidden',
+          'mt-[80px] w-80 z-[40] shadow-none p-0 mr-16 bg-background h-full transition-all overflow-hidden',
         )}>
           <TabsContent value="components">
             <p>Components Tab</p>

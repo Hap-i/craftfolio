@@ -13,6 +13,8 @@ import clsx from 'clsx'
 import { Tabs, TabsContent } from '../ui/tabs'
 import { Database, Plus, SettingsIcon, SquareStackIcon } from 'lucide-react'
 import EditorTabs from './EditorTabs'
+import EditorComponent from './EditorComponent'
+import { Separator } from '../ui/separator'
 
 type Props = {}
 
@@ -32,27 +34,34 @@ const EditorSidebar = (props: Props) => {
       modal={false}
     >
       <Tabs defaultValue="components">
-      <SheetContent
-        showX={false}
-        side="right"
-        className={clsx(
-          'mt-[80px] w-16 z-[80] shadow-none  p-0 transition-all overflow-hidden',
-        )}>
-        <EditorTabs/>
-      </SheetContent>
-      <SheetContent
-        showX={false}
-        side="right"
-        className={clsx(
-          'mt-[80px] w-80 z-[40] shadow-none p-0 mr-16 bg-background h-full transition-all overflow-hidden',
-        )}>
+        <SheetContent
+          showX={false}
+          side="right"
+          className={clsx(
+            'mt-[80px] w-16 z-[80] shadow-none  p-0 transition-all overflow-hidden',
+          )}>
+          <EditorTabs />
+        </SheetContent>
+        <SheetContent
+          showX={false}
+          side="right"
+          className={clsx(
+            'mt-[80px] w-80 z-[40] shadow-none p-0 mr-16 bg-background h-full transition-all overflow-hidden',
+          )}>
           <TabsContent value="components">
-            <p>Components Tab</p>
+            <SheetHeader className="text-left px-6 ">
+              <SheetTitle>Components</SheetTitle>
+              <SheetDescription>
+                You can drag and drop components on the canvas
+              </SheetDescription>
+            </SheetHeader>
+            <Separator className='my-4'/>
+            <EditorComponent />
           </TabsContent>
           <TabsContent value="settings">
             <p>Settings Tab</p>
           </TabsContent>
-      </SheetContent>
+        </SheetContent>
       </Tabs>
     </Sheet>
   )
